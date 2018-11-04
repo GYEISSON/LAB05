@@ -9,14 +9,15 @@ import java.io.*;
 public class SenkuGUI extends JFrame{
 	
 	private JMenu menu;  
-	private JMenuItem nuevo,guardar,guardarc,salir;
+	private JMenuItem nuevo,guardar,guardarc;
+	private Button salir;
 	private JMenuBar MB;
 	
 	public SenkuGUI() {
 		super("Senku");
-		 prepareElementos();
-		 prepareAcciones();
-		 prepareElementosMenu();
+		prepareElementos();
+		prepareAcciones();
+		prepareElementosMenu();
 	}
 	
 	public void prepareElementosMenu() {
@@ -25,7 +26,7 @@ public class SenkuGUI extends JFrame{
 		nuevo=new JMenuItem("Nuevo");
 		guardar=new JMenuItem("Guardar");
 		guardarc=new JMenuItem("Guardar como");
-		salir=new JMenuItem("Salir");
+		salir=new Button("Salir");
 		 menu.add(nuevo);
 		 menu.add(guardar); 
 		 menu.add(guardarc); 
@@ -43,13 +44,24 @@ public class SenkuGUI extends JFrame{
 	}
 	
 	public void prepareAcciones() {
-		addWindowListener(new WindowAdapter(){
-            public void windowClosing(WindowEvent evt){
-            	salga();}});
-		salir.addActionListener(new ActionListener() {
-		    public void actionPerformed(ActionEvent ae) {
-		       salga();}
-		});
+		addWindowListener(
+			new WindowAdapter() {
+	            public void windowClosing(WindowEvent evt){
+	            	salga();
+	            }
+
+            }
+
+         );
+		
+		salir.addActionListener(null);
+		salir.addActionListener(
+			new ActionListener() {
+		    	public void actionPerformed(ActionEvent ae) {
+		        	salga();
+		    	}
+			}
+		);
 	}
 	
 	 public void salga(){
