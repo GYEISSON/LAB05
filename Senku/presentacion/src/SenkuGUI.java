@@ -53,7 +53,7 @@ public class SenkuGUI extends JFrame{
             }
 
          );
-		
+		/*
 		salir.addActionListener(null);
 		salir.addActionListener(
 			new ActionListener() {
@@ -62,6 +62,7 @@ public class SenkuGUI extends JFrame{
 		    	}
 			}
 		);
+		*/
 	}
 	
 	 public void salga(){
