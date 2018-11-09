@@ -39,11 +39,9 @@ class Ficha extends JPanel {
 		});
 	}
 	
-	
 	private void oprimir(){
 		if(value==2 || value==1){
 			gui.mover(x,y);	
-			this.color = Color.WHITE;
 		}
 		
 	} 
@@ -64,11 +62,11 @@ class Ficha extends JPanel {
 			g.fillOval(0, 0, h, h);
 			this.setBackground(Color.DARK_GRAY);
 		}
-		else if (value==1){
-			this.setBackground(Color.GRAY);
+		else if (!visible && (value==1)){
+			this.setBackground(Color.DARK_GRAY);
 		}
 		else {
-			this.setBackground(Color.WHITE);
+			this.setBackground(Color.BLACK);
 		}
 	}
 
